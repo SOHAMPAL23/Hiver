@@ -1,0 +1,67 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Caches and Temporary Files
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+*.log
+cache/
+generation_cache.json
+.cache/
+
+# Environment Variables and Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+eggs/
+.installed.cfg
+develop-eggs/
+parts/
+
+# IDE and Editor Specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Large Raw Datasets (preserve golden sets and samples)
+data/twcs.csv
+data/*.zip
+data/*.tar.gz
+data/*.parquet
+data/raw/
+
+# Antigravity IDE and internal artifacts
+.system_generated/
+.gemini/
