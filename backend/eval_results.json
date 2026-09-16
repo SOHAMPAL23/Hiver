@@ -1,0 +1,515 @@
+{
+  "benchmark_metadata": {
+    "evaluation_date": "2026-09-14 09:45:26 UTC",
+    "eval_samples_count": 200,
+    "elapsed_seconds": 36.42
+  },
+  "summary_table_markdown": "| System                    | Intent Macro-F1   | Intent Acc   | Escalation Recall   | Escalation Prec   |   False Auto (Risk) |   Asym Cost/Q | Groundedness   | Actionability   | Overall Quality   |\n|---------------------------|-------------------|--------------|---------------------|-------------------|---------------------|---------------|----------------|-----------------|-------------------|\n| Trivial Baseline          | 2.8%              | 12.5%        | 0.0%                | 0.0%              |                  42 |          1.05 | 3.00/5         | 4.00/5          | 4.00/5            |\n| Simple Baseline (TF-IDF)  | 40.6%             | 41.5%        | 83.3%               | 79.5%             |                   7 |          0.22 | 2.27/5         | 4.21/5          | 3.73/5            |\n| AppleSupport Agent (Ours) | 62.3%             | 63.5%        | 92.9%               | 32.5%             |                   3 |          0.48 | 4.53/5         | 5.00/5          | 4.57/5            |",
+  "comparative_metrics": {
+    "Trivial Baseline": {
+      "intent_metrics": {
+        "accuracy": 0.125,
+        "macro_f1": 0.0278,
+        "macro_precision": 0.0156,
+        "macro_recall": 0.125,
+        "per_class": {
+          "software_update_os_bug": {
+            "precision": 0.125,
+            "recall": 1.0,
+            "f1_score": 0.2222,
+            "support": 25
+          },
+          "battery_power_charging": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "account_apple_id_icloud": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "hardware_physical_damage": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "connectivity_network_bluetooth": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "billing_subscriptions_appstore": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "device_performance_storage": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          },
+          "general_feedback_complaint": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 25
+          }
+        }
+      },
+      "escalation_metrics": {
+        "accuracy": 0.79,
+        "escalation_precision": 0.0,
+        "escalation_recall": 0.0,
+        "escalation_specificity": 1.0,
+        "true_positives_escalate": 0,
+        "false_positives_false_escalate": 0,
+        "true_negatives_auto": 158,
+        "false_negatives_false_auto_handle": 42,
+        "asymmetric_penalty_total": 210.0,
+        "asymmetric_cost_per_query": 1.05,
+        "cost_weights": {
+          "false_auto_handle": 5.0,
+          "false_escalate": 1.0
+        }
+      },
+      "reply_quality": {
+        "mean_groundedness": 3.0,
+        "mean_actionability": 4.0,
+        "mean_tone": 4.0,
+        "mean_conciseness": 5.0,
+        "mean_overall_rubric": 4.0
+      }
+    },
+    "Simple Baseline (TF-IDF)": {
+      "intent_metrics": {
+        "accuracy": 0.415,
+        "macro_f1": 0.406,
+        "macro_precision": 0.6595,
+        "macro_recall": 0.415,
+        "per_class": {
+          "software_update_os_bug": {
+            "precision": 0.2551,
+            "recall": 1.0,
+            "f1_score": 0.4065,
+            "support": 25
+          },
+          "battery_power_charging": {
+            "precision": 0.2558,
+            "recall": 0.44,
+            "f1_score": 0.3235,
+            "support": 25
+          },
+          "account_apple_id_icloud": {
+            "precision": 1.0,
+            "recall": 0.24,
+            "f1_score": 0.3871,
+            "support": 25
+          },
+          "hardware_physical_damage": {
+            "precision": 0.8333,
+            "recall": 0.4,
+            "f1_score": 0.5405,
+            "support": 25
+          },
+          "connectivity_network_bluetooth": {
+            "precision": 0.7778,
+            "recall": 0.28,
+            "f1_score": 0.4118,
+            "support": 25
+          },
+          "billing_subscriptions_appstore": {
+            "precision": 0.6667,
+            "recall": 0.08,
+            "f1_score": 0.1429,
+            "support": 25
+          },
+          "device_performance_storage": {
+            "precision": 0.7143,
+            "recall": 0.2,
+            "f1_score": 0.3125,
+            "support": 25
+          },
+          "general_feedback_complaint": {
+            "precision": 0.7727,
+            "recall": 0.68,
+            "f1_score": 0.7234,
+            "support": 25
+          }
+        }
+      },
+      "escalation_metrics": {
+        "accuracy": 0.92,
+        "escalation_precision": 0.7955,
+        "escalation_recall": 0.8333,
+        "escalation_specificity": 0.943,
+        "true_positives_escalate": 35,
+        "false_positives_false_escalate": 9,
+        "true_negatives_auto": 149,
+        "false_negatives_false_auto_handle": 7,
+        "asymmetric_penalty_total": 44.0,
+        "asymmetric_cost_per_query": 0.22,
+        "cost_weights": {
+          "false_auto_handle": 5.0,
+          "false_escalate": 1.0
+        }
+      },
+      "reply_quality": {
+        "mean_groundedness": 2.27,
+        "mean_actionability": 4.21,
+        "mean_tone": 3.61,
+        "mean_conciseness": 4.82,
+        "mean_overall_rubric": 3.73
+      }
+    },
+    "AppleSupport Agent (Ours)": {
+      "intent_metrics": {
+        "accuracy": 0.635,
+        "macro_f1": 0.6229,
+        "macro_precision": 0.6528,
+        "macro_recall": 0.635,
+        "per_class": {
+          "software_update_os_bug": {
+            "precision": 0.6154,
+            "recall": 0.64,
+            "f1_score": 0.6275,
+            "support": 25
+          },
+          "battery_power_charging": {
+            "precision": 0.4286,
+            "recall": 0.6,
+            "f1_score": 0.5,
+            "support": 25
+          },
+          "account_apple_id_icloud": {
+            "precision": 1.0,
+            "recall": 0.64,
+            "f1_score": 0.7805,
+            "support": 25
+          },
+          "hardware_physical_damage": {
+            "precision": 0.7857,
+            "recall": 0.44,
+            "f1_score": 0.5641,
+            "support": 25
+          },
+          "connectivity_network_bluetooth": {
+            "precision": 0.7667,
+            "recall": 0.92,
+            "f1_score": 0.8364,
+            "support": 25
+          },
+          "billing_subscriptions_appstore": {
+            "precision": 0.3846,
+            "recall": 0.2,
+            "f1_score": 0.2632,
+            "support": 25
+          },
+          "device_performance_storage": {
+            "precision": 0.6286,
+            "recall": 0.88,
+            "f1_score": 0.7333,
+            "support": 25
+          },
+          "general_feedback_complaint": {
+            "precision": 0.6129,
+            "recall": 0.76,
+            "f1_score": 0.6786,
+            "support": 25
+          }
+        }
+      },
+      "escalation_metrics": {
+        "accuracy": 0.58,
+        "escalation_precision": 0.325,
+        "escalation_recall": 0.9286,
+        "escalation_specificity": 0.4873,
+        "true_positives_escalate": 39,
+        "false_positives_false_escalate": 81,
+        "true_negatives_auto": 77,
+        "false_negatives_false_auto_handle": 3,
+        "asymmetric_penalty_total": 96.0,
+        "asymmetric_cost_per_query": 0.48,
+        "cost_weights": {
+          "false_auto_handle": 5.0,
+          "false_escalate": 1.0
+        }
+      },
+      "reply_quality": {
+        "mean_groundedness": 4.53,
+        "mean_actionability": 5.0,
+        "mean_tone": 3.85,
+        "mean_conciseness": 4.89,
+        "mean_overall_rubric": 4.57
+      }
+    }
+  },
+  "agent_failure_cases": [
+    {
+      "eval_id": "eval_001",
+      "customer_text": "when you sorting out a new update as my phone is as much use as a brick now thanks to your shit update",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We'd like to help. In DM, please share a few details with us about the issue you're experiencing. https://t.co/GDrqU22YpT",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_002",
+      "customer_text": "No te funciona el IOS11?",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We offer support via Twitter in English. Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_003",
+      "customer_text": "#ios11 is just killing my phone, it says I have service but I can\u2019t get out, have to restart multiple times",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "Let's visit about your cellular service in DM. Tell us if restarting helps with the link below. https://t.co/GDrqU22YpT",
+      "edge_case_category": "multi_intent",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_004",
+      "customer_text": "The amount of times my phone has froze since the newest update is ridiculous. get your shit together.",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "device_performance_storage",
+      "true_action": "auto_handle",
+      "policy_action": "auto_handle",
+      "policy_reason": "ROUTINE_AUTO_HANDLE_DEVICE_PERFORMANCE_STORAGE",
+      "draft_reply": "We'd like to help you with the freezing issues. Which exact iOS version are you running? When did this first start happening?. For step-by-step guidance, check our official article here: https://support.apple.com/HT201656",
+      "historical_brand_reply": "We'd love to help you fix the freezing. This article has steps to fix it: https://t.co/8MvHMFZ83h",
+      "edge_case_category": "sarcasm",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_005",
+      "customer_text": "My cell service has sucked since the new update. Why would y\u2019all release an update that only works with the new phones?",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "general_feedback_complaint",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://www.apple.com/feedback.",
+      "historical_brand_reply": "Thanks for reaching out. Let's take a closer look at this in DM. Click here to get started: https://t.co/GDrqU22YpT",
+      "edge_case_category": "multi_intent",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_006",
+      "customer_text": "WTF ?! J\u2019ai perdu tous mes messages, de plus la MAJ bug \u00e0 mort... mon t\u00e9l\u00e9phone s\u2019\u00e9teint sans raisons. #ios11problems",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We offer support via Twitter in English. Contact us for help in your preferred language here: https://t.co/IBIY3vMgPj",
+      "edge_case_category": "non_english",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_007",
+      "customer_text": "Apple you\u2019ve destroyed the iPhone with the release of #ios11 it\u2019s not stable and reboots every few minutes\u2026 #garbage",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We're happy to help. An update has been released that addresses this issue. If you haven't already, back up your iPhone and follow the steps here: https://t.co/osZOKKTalm DM us if you have questions. https://t.co/GDrqU22YpT",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_008",
+      "customer_text": "iPhone 6 mega lent (surtout clavier) et autonomie en chute depuis iOS 11. \u00c7a continue malgr\u00e9 les patchs! Que faire? Honteux de rendre un t\u00e9l\u00e9phone qui fonctionne super compl\u00e8tement obsol\u00e8te en une maj #obsolescenceprogrammee",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We offer support via Twitter in English. Contact us for help in your preferred language here: https://t.co/IBIY3vMgPj",
+      "edge_case_category": "non_english",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_009",
+      "customer_text": "Un aplauso para y por ios11. No llegan las notificaciones de WhatsApp hasta que no entras en la app",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "connectivity_network_bluetooth",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/HT204051.",
+      "historical_brand_reply": "We offer support via Twitter in English. Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_010",
+      "customer_text": "#iOS11 is trash. My phone keeps crashing and kicking me out of apps. Fix it !",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "What version of iOS are you currently running? Let us know and we'll go from there.",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_011",
+      "customer_text": "Ever since I done the latest update my phone has been ridiculous!",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We know it\u2019s important for your photos to download without any issues. For further help with this, please reach out to our Apps team here: https://t.co/IBIY3vMgPj",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_013",
+      "customer_text": "CUANDO VAN A CORREGIR EL PROBLEMA DEL GASTO DE BATER\u00cdA DEL IOS11 ???",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "general_feedback_complaint",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://www.apple.com/feedback.",
+      "historical_brand_reply": "We offer support via Twitter in English. Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_015",
+      "customer_text": "cuando vais arreglar el problema de la bater\u00eda con vuestras actualizaciones de IOS? Es de verg\u00fcenza",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "general_feedback_complaint",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://www.apple.com/feedback.",
+      "historical_brand_reply": "We offer support via Twitter in English. Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_019",
+      "customer_text": "Alguien le avisa a que el ios11 me desabilita esta opcion cada vez que cargo la bateria?!?",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "general_feedback_complaint",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://www.apple.com/feedback.",
+      "historical_brand_reply": "We offer support via Twitter in English. Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_020",
+      "customer_text": "Why tf is my mac taking 20 min to start !!! Fix it this new update fvckin sucks already",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "device_performance_storage",
+      "true_action": "auto_handle",
+      "policy_action": "auto_handle",
+      "policy_reason": "ROUTINE_AUTO_HANDLE_DEVICE_PERFORMANCE_STORAGE",
+      "draft_reply": "We'd like to help any way we can. Do you recall when this started to occur? Also, which Mac model do you have and what's the exact macOS version number installed on it?. For step-by-step guidance, check our official article here: https://support.apple.com/HT201656",
+      "historical_brand_reply": "Let's work together to figure this out. What are you seeing on the screen when your Mac is starting up?",
+      "edge_case_category": "sarcasm",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_021",
+      "customer_text": "Canta xente que fala galego tam\u00e9n quere escribir e twittear en galego? Galician keyboard NOW #iphonegalego #iosgalego",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "connectivity_network_bluetooth",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/HT204051.",
+      "historical_brand_reply": "We offer support via Twitter in English. Contact us for help in your preferred language here: https://t.co/IBIY3vMgPj",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_022",
+      "customer_text": "so angry with Apple and Apple Support right now! Never had someone so useless try to assist me before! Never had such ridiculous advice. No help at all. Thanks for iOS 11. It\u2019s seriously F**ked my phone!!!",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "Thanks for bringing this situation to our attention. Let\u2019s work together to get this addressed. Could you let us know more details via a DM? We\u2019ll keep moving from there. https://t.co/GDrqU22YpT",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_023",
+      "customer_text": "The update sucks! How long before you fix all the bugs? This is ridiculous \u2639\ud83d\ude44\ud83d\ude21\ud83d\ude24",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "Let's work on resolving the issues together. DM us what is happening and we can go from there. https://t.co/GDrqU22YpT",
+      "edge_case_category": "sarcasm",
+      "failure_type": "false_escalate"
+    },
+    {
+      "eval_id": "eval_024",
+      "customer_text": "en alguna de sus actualizaciones arreglaran algo que en realidad sirva en su basura de #iOS11 ? Mi iPad lleva dos dias as\u00ed...",
+      "true_intent": "software_update_os_bug",
+      "predicted_intent": "general_feedback_complaint",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "LOW_INTENT_CONFIDENCE_ESCALATE",
+      "draft_reply": "We want to ensure you get the exact help you need for this issue. We are connecting you with a dedicated Apple Support specialist who can look into your specific setup: https://www.apple.com/feedback.",
+      "historical_brand_reply": "We offer support via Twitter in English.Get help in Spanish here: https://t.co/IBIY3vMgPj or join https://t.co/OczyRx7IOs",
+      "edge_case_category": "non_english",
+      "failure_type": "intent_mismatch"
+    },
+    {
+      "eval_id": "eval_028",
+      "customer_text": "Were battery usage and connectivity issues even addressed in iOS 11.0.2? I\u2019ve been stuck to my wall smh",
+      "true_intent": "battery_power_charging",
+      "predicted_intent": "software_update_os_bug",
+      "true_action": "auto_handle",
+      "policy_action": "escalate",
+      "policy_reason": "HIGH_FRUSTRATION_LEGAL_ESCALATE",
+      "draft_reply": "We truly apologize for the frustration this has caused you. We want to make this right. A senior support specialist is reviewing your case to provide dedicated assistance: https://support.apple.com/ios/update.",
+      "historical_brand_reply": "We're happy to help with this battery issue. Join us in DM so we may better assist you: https://t.co/GDrqU22YpT",
+      "edge_case_category": "multi_intent",
+      "failure_type": "intent_mismatch"
+    }
+  ]
+}

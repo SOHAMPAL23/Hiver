@@ -1,0 +1,218 @@
+{
+  "software_update_os_bug": {
+    "cluster_id": 0,
+    "intent_key": "software_update_os_bug",
+    "name": "Software Update & OS Bugs",
+    "cluster_size": 49,
+    "top_keywords": [
+      "que",
+      "el",
+      "la",
+      "en",
+      "ios11",
+      "mi",
+      "se",
+      "por"
+    ],
+    "definition": "Issues arising after iOS/macOS update installations, including crashes, boot-loops, or system glitches.",
+    "examples": [
+      "Updated to iOS 11.1 and now my phone restarts every 10 minutes when opening apps.",
+      "My iPad is stuck on the Apple logo after trying to install the latest software update."
+    ],
+    "boundary_notes": "Focuses on OS-level anomalies caused by system updates. If the issue is solely battery draining after update, label battery_power_charging if battery is the primary complaint.",
+    "empirical_cluster_samples": [
+      "Volevo dire a che #iOS11 mi blocca il cell continuamente. !! Cazzo!!!!",
+      "E ai ta afim de resolver meu problema?? Estou muito descontente!! A atualiza\u00e7\u00e3o trava meu celular e por estar fora da garantia tenho que pagar um valor absurdo e trocar de celular?",
+      "\u00bfpor qu\u00e9 se reinicia mi iPhone cada vez que desbloqueo la panta\u2026"
+    ]
+  },
+  "battery_power_charging": {
+    "cluster_id": 1,
+    "intent_key": "battery_power_charging",
+    "name": "Battery, Power & Charging",
+    "cluster_size": 257,
+    "top_keywords": [
+      "phone",
+      "iphone",
+      "just",
+      "help",
+      "plus",
+      "turn",
+      "won",
+      "new"
+    ],
+    "definition": "Rapid battery percentage drain, overheating during use, charging port connection problems, or degraded battery health.",
+    "examples": [
+      "My iPhone 7 battery drops from 100% to 20% in two hours on standby.",
+      "My phone only charges if I hold the lightning cable bent at a weird angle."
+    ],
+    "boundary_notes": "Covers physical charging cables/ports and chemical battery discharge. If battery has physically swollen and bent the phone, flag for hardware damage escalation.",
+    "empirical_cluster_samples": [
+      "why is there no way to add seconds to the iPhone status bar or standard \u2018Clock\u2019 app? Seriously stupid when there\u2019s a seconds hand on the Clock app icon ... #thismakesnosense",
+      "Wow, the iPhone just gets worse everyday now my alarm app doesn\u2019t work. Not happy. #iphone #alarmapp #badstart",
+      "Makes me want to switch from an iPhone! I\u2019m very disappointed"
+    ]
+  },
+  "account_apple_id_icloud": {
+    "cluster_id": 2,
+    "intent_key": "account_apple_id_icloud",
+    "name": "Apple ID, iCloud & Account Security",
+    "cluster_size": 262,
+    "top_keywords": [
+      "11",
+      "ios",
+      "ios11",
+      "iphone",
+      "update",
+      "updated",
+      "phone",
+      "version"
+    ],
+    "definition": "Apple ID lockouts, two-factor authentication failures, forgotten passwords, or iCloud backup and sync errors.",
+    "examples": [
+      "I am locked out of my Apple ID and the verification code goes to a disconnected phone number.",
+      "Photos are not syncing to iCloud even though I am paying for the 200GB plan."
+    ],
+    "boundary_notes": "Concerns authentication, credentials, and Apple cloud sync. Does not include third-party app login failures.",
+    "empirical_cluster_samples": [
+      "I\u2019m getting really tired of looking at this mess when I try to manage iCloud apps w/iOS 11.0.2 & 8 Plus. \ud83d\ude3e\ud83d\ude3e",
+      "It's iOS 11.0.2. As I was checking which version, it appears there is a further update available for 11.0.3. So I'll try this!",
+      "Anyone else seeing no keyboard on ios 11.1.2? Twice today, not on any app. Reboot restored. /cc"
+    ]
+  },
+  "hardware_physical_damage": {
+    "cluster_id": 3,
+    "intent_key": "hardware_physical_damage",
+    "name": "Hardware & Physical Damage",
+    "cluster_size": 270,
+    "top_keywords": [
+      "app",
+      "problem",
+      "fix",
+      "just",
+      "issue",
+      "update",
+      "screen",
+      "work"
+    ],
+    "definition": "Cracked screens, broken glass, liquid water damage, swollen batteries, malfunctioning physical buttons, or speaker hardware failure.",
+    "examples": [
+      "Dropped my iPhone X on gravel, back glass completely shattered. What is the repair cost?",
+      "My battery has swelled and pushed the display up out of the phone frame. Is this safe?"
+    ],
+    "boundary_notes": "Physical defects requiring in-person Genius Bar inspection or mail-in repair. Always triggers human escalation.",
+    "empirical_cluster_samples": [
+      "I\u2019m saying it\u2019s there....but it often doesn\u2019t work. I\u2019ll have music playing and the \u201cmusic\u201d in the control panel will be blank. See pic",
+      "Capslock key light ON is Capslock off according to the password screen and vice-versa. Is this a known issue?",
+      "I downloaded the first 3 songs as they were released and they\u2019re fine but can\u2019t get the rest of the album. Songs from other artists download"
+    ]
+  },
+  "connectivity_network_bluetooth": {
+    "cluster_id": 4,
+    "intent_key": "connectivity_network_bluetooth",
+    "name": "Connectivity, Cellular & Bluetooth",
+    "cluster_size": 160,
+    "top_keywords": [
+      "update",
+      "phone",
+      "updated",
+      "new",
+      "iphone",
+      "crashing",
+      "ios",
+      "slow"
+    ],
+    "definition": "Cellular 'No Service' drops, persistent Wi-Fi disconnects, Bluetooth audio dropouts with AirPods or car audio units.",
+    "examples": [
+      "AirPods keep disconnecting from my MacBook every 5 minutes during Zoom calls.",
+      "My iPhone 8 keeps saying No Service after toggling airplane mode and reseating the SIM."
+    ],
+    "boundary_notes": "Wireless communication protocols (Wi-Fi, Bluetooth, cellular carrier signal, GPS).",
+    "empirical_cluster_samples": [
+      "No pending updates. I updated all my apps earlier today.",
+      "needs to get these updates fixed. Phone is not running apps correctly at all",
+      "when you sorting out a new update as my phone is as much use as a brick now thanks to your shit update"
+    ]
+  },
+  "billing_subscriptions_appstore": {
+    "cluster_id": 5,
+    "intent_key": "billing_subscriptions_appstore",
+    "name": "Billing, Subscriptions & App Store",
+    "cluster_size": 202,
+    "top_keywords": [
+      "apple",
+      "store",
+      "icloud",
+      "macbook",
+      "itunes",
+      "buy",
+      "music",
+      "account"
+    ],
+    "definition": "Unauthorized App Store in-app purchases, recurring subscription cancellations, refund requests, or declined payment methods.",
+    "examples": [
+      "I was charged $9.99 for an app subscription I cancelled 3 days ago. I need a refund.",
+      "Cannot purchase anything on the App Store, getting 'Your payment method was declined'."
+    ],
+    "boundary_notes": "Financial transactions, credit card declines, App Store purchase disputes, and Apple Music subscriptions.",
+    "empirical_cluster_samples": [
+      "bought iPads for the kids for Christmas (6&9). Would like to learn about security/parental controls to put on. Appointment at local Genius Bar the best way?",
+      "hey all. What's going on in China. UPS says that there are a lot of delays of product coming out of there for iPhone X? My delivery date with UPS says that its currently unavailable. who can get this resolved?",
+      "I\u2019ve tried to do the upgrade program online and can\u2019t. t-mobile as a carrier and no apple store closer then 3hours away. Help"
+    ]
+  },
+  "device_performance_storage": {
+    "cluster_id": 6,
+    "intent_key": "device_performance_storage",
+    "name": "Device Performance & Storage",
+    "cluster_size": 101,
+    "top_keywords": [
+      "battery",
+      "life",
+      "iphone",
+      "ios",
+      "11",
+      "update",
+      "phone",
+      "drain"
+    ],
+    "definition": "Sluggish system responsiveness, typing lag, unresponsive touchscreen, or 'System / Other' storage filling up internal memory.",
+    "examples": [
+      "System data is taking up 50GB out of 64GB on my phone and I can't download anything.",
+      "Keyboard typing has a massive 3-second lag whenever I try to send an iMessage."
+    ],
+    "boundary_notes": "Local device storage bottlenecks and sluggish UI lag without crashing/rebooting into a loop.",
+    "empirical_cluster_samples": [
+      "iOS 11 has destroyed my battery life. Will there be any fix soon?",
+      "what is happening to my phone? Keeps crashing and draining my battery! Help",
+      "why is my iPhone 7 battery suddenly only last 5 hours? #help #updatessuck #myphonesnotevenayearold"
+    ]
+  },
+  "general_feedback_complaint": {
+    "cluster_id": 7,
+    "intent_key": "general_feedback_complaint",
+    "name": "General Feedback & Service Complaints",
+    "cluster_size": 199,
+    "top_keywords": [
+      "help",
+      "fix",
+      "just",
+      "type",
+      "dm",
+      "time",
+      "shit",
+      "thanks"
+    ],
+    "definition": "Customer complaints regarding retail store staff, shipping delays, general dissatisfaction, or sarcastic venting without a specific diagnostic ask.",
+    "examples": [
+      "Worst customer service ever at the Regent St store today. Unhelpful and rude staff.",
+      "Love spending $1200 on a phone that can't even hold a signal. Outstanding engineering Apple."
+    ],
+    "boundary_notes": "Tone-heavy, complaint-focused messages without an immediate technical troubleshooting step.",
+    "empirical_cluster_samples": [
+      "can y\u2019all fix this > \u201cI\u201d situation \ud83d\ude10",
+      "I got it back thanks for answering \ud83d\udc4d\ud83c\udffb",
+      "It\u2019s not for the first time"
+    ]
+  }
+}

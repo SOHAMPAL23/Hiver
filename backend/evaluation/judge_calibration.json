@@ -1,0 +1,90 @@
+{
+  "benchmark_samples": 35,
+  "pearson_correlation": 0.5914,
+  "spearman_correlation": 0.4884,
+  "exact_agreement_rate_pct": 51.4,
+  "within_1pt_agreement_rate_pct": 74.3,
+  "discrepancies": [
+    {
+      "id": "calib_03",
+      "query": "when you sorting out a new update as my phone is as much use as a brick now thanks to your shit update",
+      "reply": "Thank you for reaching out to Apple Support. Please restart your device.",
+      "human_score": 2.5,
+      "judge_score": 3.75,
+      "diff": 1.25,
+      "reason": "Groundedness=3.0 (domain link: False); Actionability=4.0 (words: 12); Tone=4.0; Conciseness=4.0"
+    },
+    {
+      "id": "calib_13",
+      "query": "Can I trade in an iPhone 6 for an iPhone X?",
+      "reply": "You can check estimated trade-in values at https://www.apple.com/shop/trade-in.",
+      "human_score": 4.75,
+      "judge_score": 3.75,
+      "diff": 1.0,
+      "reason": "Groundedness=4.0 (domain link: True); Actionability=4.0 (words: 8); Tone=3.0; Conciseness=4.0"
+    },
+    {
+      "id": "calib_16",
+      "query": "AirDrop is not finding my wife's phone",
+      "reply": "Check Control Center > AirDrop and ensure receiving is set to Everyone.",
+      "human_score": 4.0,
+      "judge_score": 3.0,
+      "diff": 1.0,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=3.0 (words: 12); Tone=3.0; Conciseness=4.0"
+    },
+    {
+      "id": "calib_17",
+      "query": "I think someone hacked into my iCloud account",
+      "reply": "Change your Apple ID password immediately at iforgot.apple.com and enable Two-Factor Authentication.",
+      "human_score": 4.75,
+      "judge_score": 3.5,
+      "diff": 1.25,
+      "reason": "Groundedness=5.0 (domain link: True); Actionability=2.0 (words: 12); Tone=3.0; Conciseness=4.0"
+    },
+    {
+      "id": "calib_19",
+      "query": "My phone is hot enough to fry an egg right now",
+      "reply": "Remove the case, disconnect the charger, and allow the device to cool down in a shaded area.",
+      "human_score": 4.0,
+      "judge_score": 3.0,
+      "diff": 1.0,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=2.0 (words: 17); Tone=3.0; Conciseness=5.0"
+    },
+    {
+      "id": "calib_26",
+      "query": "Does AppleCare cover accidental cracked screen?",
+      "reply": "Yes, AppleCare+ covers up to two incidents of accidental damage with a $29 service fee for screens.",
+      "human_score": 4.5,
+      "judge_score": 3.0,
+      "diff": 1.5,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=2.0 (words: 17); Tone=3.0; Conciseness=5.0"
+    },
+    {
+      "id": "calib_27",
+      "query": "Speaker is muffled after accidentally spilling coffee",
+      "reply": "Turn off the phone, dry the exterior, and do not charge until completely dry. Inspect at Apple Store if sound remains distorted.",
+      "human_score": 4.0,
+      "judge_score": 3.0,
+      "diff": 1.0,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=2.0 (words: 22); Tone=3.0; Conciseness=5.0"
+    },
+    {
+      "id": "calib_34",
+      "query": "My lightning cable has exposed wires and sparked",
+      "reply": "Unplug and discard immediately to avoid electrical fire hazard. Visit Apple Store for genuine replacement.",
+      "human_score": 5.0,
+      "judge_score": 3.5,
+      "diff": 1.5,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=4.0 (words: 15); Tone=3.0; Conciseness=5.0"
+    },
+    {
+      "id": "calib_35",
+      "query": "How do I turn on Night Shift?",
+      "reply": "Open Control Center, press firmly on the Brightness slider, and tap Night Shift.",
+      "human_score": 4.75,
+      "judge_score": 2.75,
+      "diff": 2.0,
+      "reason": "Groundedness=2.0 (domain link: False); Actionability=2.0 (words: 13); Tone=3.0; Conciseness=4.0"
+    }
+  ]
+}

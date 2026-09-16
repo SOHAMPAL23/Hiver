@@ -1,0 +1,87 @@
+software_update_os_bug:
+  description: "Issues arising after iOS or macOS software updates, including system crashes, reboot loops, UI freezing, or OS-level regression bugs."
+  positive_examples:
+    - "Updated to iOS 11.1 and now my phone restarts every 10 minutes when opening apps."
+    - "My iPad is stuck on the Apple logo after trying to install the latest software update."
+    - "Apps keep crashing on launch ever since I updated my iPhone last night."
+  negative_examples:
+    - "My phone battery drains fast after the update (Primary issue is battery: battery_power_charging)."
+    - "Can't connect to Wi-Fi after updating (Primary issue is networking: connectivity_network_bluetooth)."
+  escalation_risk: "LOW_TO_MEDIUM"
+
+battery_power_charging:
+  description: "Rapid battery percentage drain, overheating during charging or normal use, lightning cable failure, or battery health degradation."
+  positive_examples:
+    - "My iPhone 7 battery drops from 100% to 20% in two hours on standby."
+    - "My phone only charges if I hold the lightning cable bent at a weird angle."
+    - "Device gets burning hot to the touch while charging on the nightstand."
+  negative_examples:
+    - "My battery is swollen and pushing the screen up (Physical hardware safety hazard: hardware_physical_damage)."
+    - "Phone won't turn on at all after dropping it in water (Liquid damage: hardware_physical_damage)."
+  escalation_risk: "MEDIUM_TO_HIGH"
+
+apple_id_icloud_account:
+  description: "Apple ID login authentication, forgotten passwords, two-factor authentication (2FA) lockouts, iCloud storage sync, or suspicious account access."
+  positive_examples:
+    - "Locked out of my Apple ID and not receiving the verification code on my trusted number."
+    - "Photos are not syncing to iCloud from my Mac even though I have 50GB storage available."
+    - "Someone in another state logged into my Apple ID and changed my recovery email."
+  negative_examples:
+    - "I was charged twice for iCloud storage (Billing dispute: app_store_billing_purchase)."
+    - "App Store won't let me download apps because my card was declined (app_store_billing_purchase)."
+  escalation_risk: "HIGH"
+
+hardware_physical_damage:
+  description: "Cracked screens, broken glass, water/liquid ingress, swelling batteries, malfunctioning physical buttons, or Genius Bar hardware repair requests."
+  positive_examples:
+    - "Dropped my iPhone on concrete and the front glass is completely shattered."
+    - "My phone fell in the pool and won't turn on anymore."
+    - "The battery has visibly swollen and is bending the aluminum frame."
+  negative_examples:
+    - "My screen is frozen on the Apple logo (Software bootloop: software_update_os_bug)."
+    - "Screen went black but I can still hear notifications (Display diagnostic/software: software_update_os_bug)."
+  escalation_risk: "CRITICAL"
+
+connectivity_network_bluetooth:
+  description: "Cellular data reception dropouts, Wi-Fi disconnection/slow speeds, Bluetooth pairing failures (AirPods, Apple Watch), or carrier SIM errors."
+  positive_examples:
+    - "My iPhone keeps dropping the Wi-Fi connection every few minutes at home."
+    - "AirPods won't connect via Bluetooth to my MacBook Pro."
+    - "iPhone says No Service even with an active SIM card."
+  negative_examples:
+    - "Can't stream music because Apple Music says I have no subscription (app_store_billing_purchase)."
+    - "Bluetooth icon missing after updating macOS (software_update_os_bug)."
+  escalation_risk: "LOW"
+
+audio_sound_microphone:
+  description: "Crackling or distorted speaker audio, microphone not picking up voice on calls, receiver volume too low, or headphone jack/Lightning adapter audio issues."
+  positive_examples:
+    - "People can't hear me when I speak on phone calls unless I turn on speakerphone."
+    - "Ear speaker is crackling loudly when playing voice memos."
+    - "No sound comes out of the bottom speakers when watching YouTube."
+  negative_examples:
+    - "AirPods disconnected from Bluetooth (connectivity_network_bluetooth)."
+    - "Microphone broken after dropping phone in a lake (hardware_physical_damage)."
+  escalation_risk: "LOW_TO_MEDIUM"
+
+app_store_billing_purchase:
+  description: "Unauthorized App Store or iTunes charges, subscription cancellation requests, double charges, payment method declines, or in-app purchase refund disputes."
+  positive_examples:
+    - "I was charged twice for an annual subscription on the App Store. Want a refund."
+    - "My credit card was charged $49.99 by Apple iTunes without my authorization."
+    - "How do I cancel a subscription that doesn't show up in my purchase history?"
+  negative_examples:
+    - "Can't sign into iTunes because my Apple ID password is wrong (apple_id_icloud_account)."
+    - "App crashed when opening (software_update_os_bug)."
+  escalation_risk: "HIGH"
+
+general_feedback_complaint:
+  description: "General complaints about Apple policies, retail store personnel grievances, shipping/order delays, feedback on product features, or sarcasm/rants without specific technical diagnostics."
+  positive_examples:
+    - "Customer service at Westfield London store was extremely rude and unhelpful!"
+    - "Apple's new pricing is completely absurd, you lost a customer for life."
+    - "When will my iPhone pre-order arrive? Tracking has not updated for 3 days."
+  negative_examples:
+    - "Phone broken out of the box (hardware_physical_damage)."
+    - "App Store charged me extra tax (app_store_billing_purchase)."
+  escalation_risk: "MEDIUM"

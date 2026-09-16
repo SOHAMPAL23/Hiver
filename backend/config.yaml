@@ -1,0 +1,27 @@
+brand:
+  domain: apple.com
+  handle: '@AppleSupport'
+  kb_root: https://support.apple.com
+  name: Apple Support
+data:
+  clean_data_path: data/samples/apple_support_clean.parquet
+  golden_eval_path: golden_eval/golden_eval.jsonl
+  golden_set_csv: data/golden_set.csv
+  max_conversations: 10000
+  max_tweets: 100000
+  random_seed: 42
+  retrieval_corpus_path: data/samples/retrieval_corpus.parquet
+llm:
+  cache_dir: cache
+  model_name: gpt-4o-mini
+  provider: openai
+  use_cache: true
+model:
+  classifier_model_path: agent/classifier_model.pkl
+  confidence_threshold: 0.58
+  embedding_model: all-MiniLM-L6-v2
+  retrieval_index_path: agent/retrieval_index.npz
+  similarity_threshold: 0.5
+policy:
+  asymmetric_cost_fah: 5.0
+  asymmetric_cost_fe: 1.0
